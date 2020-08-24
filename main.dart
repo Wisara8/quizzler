@@ -35,9 +35,11 @@ class _QuizPageState extends State<QuizPage> {
 
   int questionNumber = 0;
 
+  List<bool> answers = [false, true, true];
+
   void clicked() {
     setState(() {
-      questionNumber = questionNumber + 1;
+      questionNumber++;
     });
   }
 
@@ -78,6 +80,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+                bool correctAnswer = answers[questionNumber];
+                if (correctAnswer == true) {
+                  print('User got it right');
+                } else {
+                  print('User got it wrong');
+                }
                 clicked();
               },
             ),
@@ -97,6 +105,12 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+                bool correctAnswer = answers[questionNumber];
+                if (correctAnswer == false) {
+                  print('User got it right');
+                } else {
+                  print('User got it wrong');
+                }
                 clicked();
               },
             ),
