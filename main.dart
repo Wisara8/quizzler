@@ -39,7 +39,10 @@ class _QuizPageState extends State<QuizPage> {
       //TODO: Step 4 - Use IF/ELSE to check if we've reached the end of the quiz. If true, execute Part A, B, C, D.
       if (quizBrain.isFinished() == true) {
         //TODO: Step 4 Part A - show an alert using rFlutter_alert (remember to read the docs for the package!)
-        Alert(context: context, title: "RFLUTTER", desc: "Flutter is awesome.")
+        Alert(
+                context: context,
+                title: "FINISHED!",
+                desc: "You've Reached the End of the Quiz.")
             .show();
         //HINT! Step 4 Part B is in the quiz_brain.dart
         //TODO: Step 4 Part C - reset the questionNumber,
